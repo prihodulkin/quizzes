@@ -60,7 +60,7 @@ class UsersController < ApiBaseController
 
   def create_user_params
     params.required(:user).permit(
-      *default_user_fields,       :phone, :password
+      *default_user_fields, :phone, :password
     )
   end
 end
