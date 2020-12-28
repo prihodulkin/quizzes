@@ -4,5 +4,4 @@ Rails.application.routes.draw do
   resources :questions
   resources :categories
   resources :quizzes
-  root :to => 'index#index'
 end
