@@ -1,5 +1,5 @@
 class UsersController < ApiBaseController
-  #skip_before_action :verify_authenticity_token
+  skip_before_action :verify_authenticity_token
   before_action :load_user, except: %i[create]
   authorize_resource except: %i[create]
   before_action :authenticate_user, except: %i[create]
