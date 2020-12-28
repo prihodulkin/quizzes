@@ -11,19 +11,6 @@ class UsersController < ApiBaseController
     )
   end
 
-  def change_password
-    if (params[:old_password] == @user.password)
-      @user.update_password(params[:new_password])
-      if @user.errors.blank?
-        render status: :ok
-      else
-        render json: @user.errors, status: bad_request
-      end
-    else
-      render :json=>{:old_password=>'Incorrect old password'}
-    end
-  end
-
   def update
     @user.update(update_user_params)
     if @user.errors.blank?
