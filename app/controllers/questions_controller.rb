@@ -7,7 +7,7 @@ class QuestionsController < ApiBaseController
     if questions.empty?
       render status: :no_content
     else
-      render json: questions
+      render json: questions, :include=>:test_answers
     end
   end
 
