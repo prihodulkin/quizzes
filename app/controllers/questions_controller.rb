@@ -40,7 +40,7 @@ class QuestionsController < ApiBaseController
   def show
     question = Question.find_by_id(params[:id])
     if question.errors.blank?
-      render json: question
+      render json: question, :include=>:test_answers
     else
       render json: question.errors, status: :bad_request
     end
